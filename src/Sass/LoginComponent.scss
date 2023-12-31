@@ -13,17 +13,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-left: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 30px;
 }
 .login-btn{
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     font-size: 20px;
-    margin-top: 10px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    margin: auto;
     width: 150px;
     height: 30px;
     border-radius: 25px;
@@ -31,4 +32,27 @@
     border: none;
     background-color: black;
     cursor: pointer;
+}
+form{
+    padding: 10px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+.login input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    padding: 15px 10px;
+    border: none;
+    margin: auto;
+    background-color: white;
+    color: black;
+    outline: 0;
+    width: 250px;
+    margin-bottom: 25px;
+}
+::placeholder{
+    font-size: 18px;
 }
