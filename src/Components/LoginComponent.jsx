@@ -10,7 +10,7 @@ export default function LoginComponent() {
 
   return (
     <div className='box'>
-      <img src={LinkedinLogo} alt="Logo" className='LinkedinLogo' />
+      <p>LinkedIn<img src={LinkedinLogo} alt="Logo" className='LinkedinLogo' /></p>
       <div className="login">
         <h1 className="header">Sign in</h1>
         <p className='sub-heading'>Stay updated on your professional world</p>
