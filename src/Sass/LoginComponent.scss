@@ -1,3 +1,7 @@
+.body{
+    margin: 0;
+    padding: 0;
+}
 .login{
     display: block;
     justify-content: center;
@@ -50,7 +54,7 @@ form{
     padding: 15px 10px;
     border: none;
     margin: auto;
-    background-color: white;
+    background-color: rgba(218, 192, 192, 0.87);
     color: black;
     outline: 0;
     width: 250px;
@@ -65,14 +69,34 @@ form{
     top: 20px;
     left: 20px ;
 }
+.headrule{ 
+    border: 0;
+    height: 1px;
+    background: black;
+    margin: 5px;
+}
 .or{
+    display: block;
+    width: 40px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.87);
+    font-size: 14px;
+    margin-top: -16px;
+}
+.Googlebtn{
+    font-size: 18px;
     display: flex;
+    border-radius: 25px;
+    outline: 0;
+    border: none;
     justify-content: center;
     align-items: center;
     margin: auto;
     margin-top: 15px;
+    background-color: white;
+    color: black;
 }
-.Googlebtn{
+.Applebtn{
     font-size: 18px;
     display: flex;
     border-radius: 25px;
