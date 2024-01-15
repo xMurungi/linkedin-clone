@@ -1,30 +1,58 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+//import { Navigate } from '../../Helpers/useNavigate';
+import { toast } from 'react-toastify';
 import LinkedinLogo from "../Assets/LinkedinLogo.png";
-import { loginAPI } from "../API/AuthAPI";
+import { GoogleSignInAPI, LoginAPI } from "../API/AuthAPI";
 import "../Sass/LoginComponent.scss";
+import GoogleButton from 'react-google-button';
 
 export default function LoginComponent() {
-  const login = () => {
-    loginAPI();
-  }
+
+  const navigate = useNavigate();
+
+  const [credentials, setCredentials] = useState({});
+  console.log(credentials);
+  
+  const login = async () => {
+    try {
+      let res = await LoginAPI(credentials.email, credentials.password);
+      toast.success("Signed in to LinkedIn");
+      navigate("/home");
+      return res;
+    } catch (err) {
+      console.log(err);
+      toast.error("Check your credentials");
+    }
+  };
+
+  const GSignIn = () => {
+    let response = GoogleSignInAPI();
+    console.log(response);
+    return response;
+  };
 
   return (
     <div className='box'>
-      <p>LinkedIn<img src={LinkedinLogo} alt="Logo" className='LinkedinLogo' /></p>
+      <p><img src={LinkedinLogo} alt="Logo" className='LinkedinLogo' /></p>
       <div className="login">
-        <h1 className="header">Sign in</h1>
-        <p className='sub-heading'>Stay updated on your professional world</p>
-        <form action="">
-          <input type="text" name='email' className="email-input" autoComplete='username' placeholder='Email or Phone' required />
-          <input type='password' name='password' className="password-input" autoComplete='current-password' placeholder='Password' required />
+        <h1 className="header">Sign in to Linkedin</h1>
+        
+          <input onChange={(event) =>
+              setCredentials({ ...credentials, email: event.target.value })
+            }
+            type="email" name='email' className="email-input" autoComplete='username' placeholder='Email or Phone' required />
+          <input onChange={(event) =>
+              setCredentials({ ...credentials, password: event.target.value })
+            }
+            type='password' name='password' className="password-input" autoComplete='current-password' placeholder='Password' required />
           <button onClick={login} className="login-btn">Login</button>
-        </form>
-        <hr className='headrule'/>
-        <span className='or' >or</span>
-        <button className='Googlebtn'><span><img src={LinkedinLogo} alt="logo" /></span>Continue with Google</button>
-        <button className='Applebtn'>Continue with Apple</button>
+        
+        <hr className="hr-text gradient" data-content="or"/>
+        <GoogleButton onClick={GSignIn} className='Googlebtn' />
+        <p className='new'>New to LinkedIn?<a href=""><span className='join-now' onClick={ () => navigate('/register') } > Join now</span></a></p>
       </div>
-      <a target="_blank" href="https://icons8.com/icon/114445/linkedin-circled">LinkedIn Circled</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+      <a target="_blank" href="https://icons8.com/icon/114445/linkedin-circled">LinkedIn Circled</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> 
     </div>
-  )
+  );
 }

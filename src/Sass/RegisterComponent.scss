@@ -11,13 +11,13 @@
     padding: 25px;
     border-radius: 25px;
     width: 500px;
-    height: 500px;
+    height: 100%;
 }
-.header{
+.header2{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 0px;
     margin-bottom: 20px;
     font-size: 30px;
     font-weight: 600 !important;
@@ -135,7 +135,7 @@ form{
       color: black;
       background-color: #e0e0e0;
 }
-.new{
+.Already{
     font-size: 18px;
     text-align: center;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
