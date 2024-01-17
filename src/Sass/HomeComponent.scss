@@ -1,0 +1,23 @@
+body{
+    border: solid;
+    padding: 0%;
+    margin-top: 3.125rem;
+}
+.columns{
+    position: absolute;
+    display: inline-grid !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: solid;
+    width: 98vw;
+    height: 100vh;
+}
+.first-column{
+    border: solid;
+}
+.second-column{
+    border: solid;
+}
+.third-column{
+    border: solid;
+}
