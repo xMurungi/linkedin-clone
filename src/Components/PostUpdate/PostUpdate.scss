@@ -1,0 +1,12 @@
+.post-update-root{
+    margin-top: 3.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+    border: solid;
+    .post-update{
+        width: 80%;
+        height: 100px;
+    }
+}

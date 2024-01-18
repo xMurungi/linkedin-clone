@@ -13,9 +13,11 @@
 img{
     height: 35px;
     cursor: pointer;
+    padding: 3px;
 }
 img:hover{
-    background-color: default;
+    background-color: rgb(216, 216, 216);
+    border-radius: 25px;
 }
 .search-bar{
     margin: 0;
@@ -44,6 +46,6 @@ img:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
+    gap: 2rem;
     margin-left: 200px;
 }

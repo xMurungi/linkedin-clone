@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import HomeComponent from "../Components/HomeComponent";
 import { useNavigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebaseConfig";
+import HomeComponent from "../Components/HomeComponent";
 import Loader from "../Components/Common/Loader";
 
 export default function Home(){
