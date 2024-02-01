@@ -12,11 +12,12 @@ export default function LoginComponent() {
   const navigate = useNavigate();
 
   const [credentials, setCredentials] = useState({});
-  console.log(credentials);
-  
+
   const login = async () => {
     try {
       let res = await LoginAPI(credentials.email, credentials.password);
+      localStorage.setItem('UserEmail', res.email);
+
       toast.success("Signed in to LinkedIn");
       navigate("/home");
       return res;

@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Modal } from 'antd';
 import "../Modal/Modal.scss";
 
-const ModalPost = ({modalOpen, setModalOpen, status, setStatus}) => {
+const ModalPost = ({modalOpen, setModalOpen, status, setStatus, sendStatus}) => {
 
   return (
     <>
@@ -13,7 +13,7 @@ const ModalPost = ({modalOpen, setModalOpen, status, setStatus}) => {
         onOk={() => setModalOpen(false)}
         onCancel={() => setModalOpen(false)}
         footer={[
-            <Button key={"Submit"} type='primary' disabled={ status.length> 0 ? false : true } >Post</Button>
+            <Button onClick={sendStatus} key={"Submit"} type='primary' disabled={ status.length > 0 ? false : true } >Post</Button>
         ]}
       >
         <input

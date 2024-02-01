@@ -11,11 +11,11 @@ export default function RegisterComponent() {
   const nav = useNavigate({});
 
   const [credentials, setCredentials] = useState({});
-  console.log(credentials);
   
   const register = async () => {
     try {
       let res = await RegisterAPI(credentials.email, credentials.password);
+      localStorage.setItem('UserEmail', res.email);
       toast.success("Registered to LinkedIn");
       nav("/home");
       return res;

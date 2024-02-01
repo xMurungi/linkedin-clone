@@ -3,11 +3,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     .post-update{
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 80%;
+        width: 550px;
         height: 100px;
         margin-top: 30px;
         background-color: whitesmoke;
