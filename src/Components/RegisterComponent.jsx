@@ -15,7 +15,10 @@ export default function RegisterComponent() {
   const register = async () => {
     try {
       let res = await RegisterAPI(credentials.email, credentials.password);
-      localStorage.setItem('UserEmail', res.email);
+      localStorage.setItem('UserEmail', res.user.email);
+      console.log(res.user.email);
+      const result = res.user.email;
+      const result2 = result.jso
       toast.success("Registered to LinkedIn");
       nav("/home");
       return res;
@@ -27,7 +30,6 @@ export default function RegisterComponent() {
 
   const GSignIn = () => {
     let response = GoogleSignInAPI();
-    console.log(response);
     return response;
   };
 

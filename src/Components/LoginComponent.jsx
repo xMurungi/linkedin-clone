@@ -9,6 +9,7 @@ import GoogleButton from 'react-google-button';
 
 export default function LoginComponent() {
 
+  let email;
   const navigate = useNavigate();
 
   const [credentials, setCredentials] = useState({});
@@ -16,8 +17,9 @@ export default function LoginComponent() {
   const login = async () => {
     try {
       let res = await LoginAPI(credentials.email, credentials.password);
-      localStorage.setItem('UserEmail', res.email);
-
+      localStorage.setItem('UserEmail', res.user.email);
+      console.log(res.user.email);
+      email = res.user.email;
       toast.success("Signed in to LinkedIn");
       navigate("/home");
       return res;
@@ -29,7 +31,6 @@ export default function LoginComponent() {
 
   const GSignIn = () => {
     let response = GoogleSignInAPI();
-    console.log(response);
     return response;
   };
 
@@ -48,7 +49,7 @@ export default function LoginComponent() {
             }
             type='password' name='password' className="password-input" autoComplete='current-password' placeholder='Password' required />
           <button onClick={login} className="login-btn">Login</button>
-        
+        <div>{email}</div>
         <hr className="hr-text gradient" data-content="or"/>
         <GoogleButton onClick={GSignIn} className='Googlebtn' />
         <p className='new'>New to LinkedIn?<a href=""><span className='join-now' onClick={ () => navigate('/register') } > Join now</span></a></p>

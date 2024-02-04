@@ -6,6 +6,7 @@ import { getCurrentTimeStamp } from "../Helpers/useMoment";
 import "../PostUpdate/PostUpdate.scss";
 
 export default function PostUpdate(){
+    const userEmail = localStorage.getItem('UserEmail');
     const [modalOpen, setModalOpen] = useState(false);
     const [status, setStatus] = useState("");
     const [allStatuses, setAllStatuses] = useState([]);
@@ -14,6 +15,7 @@ export default function PostUpdate(){
         const TimeStatusobj = {
             status: status,
             time: getCurrentTimeStamp('LLL'),
+            userEmail: userEmail,
         };
         console.log(TimeStatusobj);
         await PostStatus(TimeStatusobj);

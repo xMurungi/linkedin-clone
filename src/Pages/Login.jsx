@@ -13,6 +13,8 @@ export default function Login() {
   useEffect( ()=> {
     onAuthStateChanged(auth, (res) => {
       console.log(res);
+      console.log(res.email);
+      localStorage.setItem('UserEmail', res.email);
       if(res?.accessToken){
         nav("/home");
         return <Loader />
