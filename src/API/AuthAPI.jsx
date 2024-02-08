@@ -28,3 +28,12 @@ export const GoogleSignInAPI = () => {
     return error;
   }
 }
+
+export const onLogout = () => {
+  try {
+    signOut(auth);
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}

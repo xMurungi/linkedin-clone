@@ -7,7 +7,7 @@ import Loader from "../Components/Common/Loader";
 
 export default function Login() {
 
-  const [Loading, setLoading] = useState(true);
+  const [Loading, setLoading] = useState(false);
   const nav = useNavigate();
 
   useEffect( ()=> {

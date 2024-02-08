@@ -17,8 +17,6 @@ export default function RegisterComponent() {
       let res = await RegisterAPI(credentials.email, credentials.password);
       localStorage.setItem('UserEmail', res.user.email);
       console.log(res.user.email);
-      const result = res.user.email;
-      const result2 = result.jso
       toast.success("Registered to LinkedIn");
       nav("/home");
       return res;
@@ -38,6 +36,10 @@ export default function RegisterComponent() {
         <div className="login">
           <h1 className="header2">Register to to LinkedIn</h1>
         
+           <input onChange={(event) =>
+              setCredentials({ ...credentials, name: event.target.value })
+            }
+              type="text" name='name' className="name-input" autoComplete='name' placeholder='Your name' required />
             <input onChange={(event) =>
               setCredentials({ ...credentials, email: event.target.value })
             }

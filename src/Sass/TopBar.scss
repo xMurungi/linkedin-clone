@@ -21,10 +21,10 @@ img:hover{
 }
 .search-bar{
     margin: 0;
-    border: solid;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: solid;
     border-radius: 25px;
     height: 16px;
     padding: 10px;
@@ -48,4 +48,10 @@ img:hover{
     align-items: center;
     gap: 2rem;
     margin-left: 200px;
+}
+.popup-position{
+    position: absolute;
+    right: 50px;
+    top: 52px;
+    z-index: 99;
 }

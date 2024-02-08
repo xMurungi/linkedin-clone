@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Sass/TopBar.scss";
 import LinkedinLogo from "../assets/LinkedinLogo.png";
@@ -9,8 +9,14 @@ import home2 from "../assets/icons8-home.svg";
 import people from "../assets/icons8-myspace.svg";
 import news from "../assets/icons8-news.svg";
 import profile from "../assets/icons8-user-male.svg";
+import ProfilePopUp from "./Common/ProfilePopUp";
 
 const TopBar = ()=> {
+
+    const [popupVisible, setPopupVisible] = useState(false);
+    const displayPopup = () => {
+        setPopupVisible(!popupVisible);
+    };
 
     const nav = useNavigate();
     const goToRoute = (route) => {
@@ -19,20 +25,26 @@ const TopBar = ()=> {
 
     return(
         <div className="topbar" >
+            {!popupVisible ? (
+                <div className="popup-position">
+                    <ProfilePopUp />
+                </div>
+            ) : (
+                    <></>
+                )}
 
             <img src={LinkedinLogo} alt="Logo" />
             <div className="search-bar" >
                  <input className="search-input" type="text" /> <span /> <img src={anime} alt="Search" /> 
             </div>
+
             <div className="mid-icons" >
                 <img src={home2} alt="Home" onClick={goToRoute("/home")} />
                 <img src={people} alt="" onClick={goToRoute("/")} />
                 <img src={Briefcase} alt="" onClick={goToRoute("/")} />
                 <img src={msgicon} alt="" onClick={goToRoute("/")} />
                 <img src={news} alt="" onClick={goToRoute("/")} />
-                <img src={profile} alt="" onClick={goToRoute("/")} />
-                <img src={profile} alt="Profile switch" />
-
+                <img src={profile} alt="Profile switch" onClick={displayPopup} />
             </div>
             
         </div>

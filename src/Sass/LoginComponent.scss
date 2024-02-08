@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
 }
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .login{
     display: block;
     justify-content: center;

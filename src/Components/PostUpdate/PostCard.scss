@@ -1,22 +1,22 @@
 .PostCard{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 550px;
-    height: 100px;
+    min-height: auto;
     margin-top: 30px;
     background-color: whitesmoke;
     border: 1px solid #b7b7b7;
     border-radius: 7px;
-    padding: 10px;
+    padding-bottom: 10px;
     .timeStamp{
         color: rgba(0, 0, 0, 0.6);
         font-family: system-ui, sans-serif;
         font-size: 12px;
         font-weight: 400;
+        margin: 10px 0 0 10px;
     }
     .status{
+        margin: 10px 0 0 10px;
         text-align: left;
         font-family: system-ui, sans-serif;
         font-size: 14px;

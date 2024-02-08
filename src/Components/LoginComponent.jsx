@@ -53,8 +53,8 @@ export default function LoginComponent() {
         <hr className="hr-text gradient" data-content="or"/>
         <GoogleButton onClick={GSignIn} className='Googlebtn' />
         <p className='new'>New to LinkedIn?<a href=""><span className='join-now' onClick={ () => navigate('/register') } > Join now</span></a></p>
+        <a target="_blank" href="https://icons8.com/icon/114445/linkedin-circled">LinkedIn Circled</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> 
       </div>
-      <a target="_blank" href="https://icons8.com/icon/114445/linkedin-circled">LinkedIn Circled</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> 
     </div>
   );
 }
