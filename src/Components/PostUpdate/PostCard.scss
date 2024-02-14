@@ -8,12 +8,19 @@
     border: 1px solid #b7b7b7;
     border-radius: 7px;
     padding-bottom: 10px;
+    .username{
+        color: rgba(0, 0, 0, 0.6);
+        font-family: system-ui, sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        margin: 10px 0 0 10px;
+    }
     .timeStamp{
         color: rgba(0, 0, 0, 0.6);
         font-family: system-ui, sans-serif;
         font-size: 12px;
         font-weight: 400;
-        margin: 10px 0 0 10px;
+        margin: 0px 0 0 10px;
     }
     .status{
         margin: 10px 0 0 10px;

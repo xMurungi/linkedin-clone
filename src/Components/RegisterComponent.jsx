@@ -4,6 +4,7 @@ import GoogleButton from "react-google-button";
 import { useNavigate } from "react-router-dom";
 import { RegisterAPI, GoogleSignInAPI } from "../API/AuthAPI";
 import { toast } from 'react-toastify';
+import { postUserData } from "../API/FireStoreAPI";
 import "../Sass/RegisterComponent.scss";
 
 export default function RegisterComponent() {
@@ -16,7 +17,10 @@ export default function RegisterComponent() {
     try {
       let res = await RegisterAPI(credentials.email, credentials.password);
       localStorage.setItem('UserEmail', res.user.email);
-      console.log(res.user.email);
+      postUserData({
+        name: credentials.name,
+        email: credentials.email,
+      });
       toast.success("Registered to LinkedIn");
       nav("/home");
       return res;

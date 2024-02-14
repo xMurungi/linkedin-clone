@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Sass/TopBar.scss";
 import LinkedinLogo from "../assets/LinkedinLogo.png";
@@ -13,15 +13,12 @@ import ProfilePopUp from "./Common/ProfilePopUp";
 
 const TopBar = ()=> {
 
-    const [popupVisible, setPopupVisible] = useState(false);
+    const [popupVisible, setPopupVisible] = useState(true);
     const displayPopup = () => {
         setPopupVisible(!popupVisible);
     };
 
     const nav = useNavigate();
-    const goToRoute = (route) => {
-        nav(route);
-    };
 
     return(
         <div className="topbar" >
@@ -39,11 +36,11 @@ const TopBar = ()=> {
             </div>
 
             <div className="mid-icons" >
-                <img src={home2} alt="Home" onClick={goToRoute("/home")} />
-                <img src={people} alt="" onClick={goToRoute("/")} />
-                <img src={Briefcase} alt="" onClick={goToRoute("/")} />
-                <img src={msgicon} alt="" onClick={goToRoute("/")} />
-                <img src={news} alt="" onClick={goToRoute("/")} />
+                <img src={home2} alt="Home" onClick={() => nav("/home")} />
+                <img src={people} alt="" onClick={() => nav("/")} />
+                <img src={Briefcase} alt="" onClick={() => nav("/")} />
+                <img src={msgicon} alt="" onClick={() => nav("/")} />
+                <img src={news} alt="" onClick={() => nav("/")} />
                 <img src={profile} alt="Profile switch" onClick={displayPopup} />
             </div>
             

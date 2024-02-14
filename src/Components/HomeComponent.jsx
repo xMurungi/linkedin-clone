@@ -1,14 +1,21 @@
-import React from "react";
+import { useMemo, useState } from "react";
 import "../Sass/HomeComponent.scss";
 import TopBar from "./TopBar";
-import LinkedinLogo from "../assets/LinkedinLogo.png";
+import { getCurrentUser } from "../API/FireStoreAPI";
 import PostUpdate from "./PostUpdate/PostUpdate";
 
 export default function HomeComponent(){
+
+    const [CurrentUser, setCurrentuser] = useState("");
+
+    useMemo(() => {
+        getCurrentUser(setCurrentuser);
+    },[]);
+
     return(
         <div className="main" >
             <TopBar className="topbar" />
-            <PostUpdate className="post" />
+            <PostUpdate CurrentUser={CurrentUser || { name: 'Default User' }} className="post" />
         </div>
     );
 }

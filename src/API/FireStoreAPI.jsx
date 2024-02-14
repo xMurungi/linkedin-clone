@@ -1,8 +1,11 @@
 import { toast } from "react-toastify";
 import { firestore } from "../firebaseConfig";
 import { addDoc, collection, onSnapshot } from "firebase/firestore";
+import { FirebaseError } from "firebase/app";
  
 const dbRef = collection(firestore, "posts");
+let userRef = collection(firestore, "users");
+//let postsRef = collection(firestore, "posts");
 
 export const PostStatus = (TimeStatusobj) => {
     addDoc(dbRef, TimeStatusobj)
@@ -23,3 +26,25 @@ export const getPosts = (setAllStatuses) => {
         }));
     });
 }
+
+export const postUserData = (object) => {
+    addDoc(userRef, object)
+    .then(() => {})
+    .catch((err) => {
+        console.log(err);
+    });
+}
+
+export const getCurrentUser = (setCurrentuser) => {
+
+    onSnapshot(userRef, (response) => {
+        setCurrentuser(
+            response.docs.map((docs) => {
+                return { ...docs.data(), userID: docs.id };
+            })
+            .filter((item) => {
+                return item.email === localStorage.getItem("UserEmail");
+            })[0] 
+        );
+    });
+};
