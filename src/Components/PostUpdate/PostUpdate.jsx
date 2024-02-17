@@ -11,7 +11,6 @@ export default function PostUpdate( {CurrentUser} ){
     const [modalOpen, setModalOpen] = useState(false);
     const [status, setStatus] = useState("");
     const [allStatuses, setAllStatuses] = useState([]);
-    console.log(CurrentUser);
 
     const sendStatus = async () => {
         const TimeStatusobj = {
@@ -31,7 +30,6 @@ export default function PostUpdate( {CurrentUser} ){
         getPosts(setAllStatuses);
     } ,[])
 
-    console.log(allStatuses);
 
     return(
  

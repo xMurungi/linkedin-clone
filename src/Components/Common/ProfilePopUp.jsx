@@ -9,7 +9,7 @@ export default function ProfilePopUp (){
     return(
         <div className="popup-card" >
             <div className="popup-options">
-                <button className="popup-option" onClick={onLogout} >LOG OUT</button>
+                <button className="popup-option" onClick={onLogout} >Log Out</button>
                 <button className="popup-option" onClick={() => nav("/profile")} >My Profile</button>
             </div>
         </div>

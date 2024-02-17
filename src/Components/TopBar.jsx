@@ -32,7 +32,7 @@ const TopBar = ()=> {
 
             <img src={LinkedinLogo} alt="Logo" />
             <div className="search-bar" >
-                 <input className="search-input" type="text" /> <span /> <img src={anime} alt="Search" /> 
+                 <input name="Search" className="search-input" type="text" /> <span /> <img src={anime} alt="Search" /> 
             </div>
 
             <div className="mid-icons" >
