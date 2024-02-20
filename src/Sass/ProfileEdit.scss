@@ -1,7 +1,7 @@
 .profile-edit{
     margin-top: 3.5rem;
     background-color: whitesmoke;
-    height: 50vh;
+    height: 100%;
     padding: 20px;
     border-radius: 5px;
     position: relative;
@@ -48,4 +48,20 @@
         color: rgba(0, 0, 0, 0.9);
         color: rgba(0, 0, 0, 0.9);
     }
+    .save-btn{
+        display: block;
+        background-color: rgb(44, 43, 43);
+        border-radius: 10px;
+        margin-top: 15px;
+        border: none;
+        outline: 0;
+        padding: 5px;
+        width: 70px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    .save-btn:hover{
+        background-color: rgb(38, 25, 25);
+    }       
 }

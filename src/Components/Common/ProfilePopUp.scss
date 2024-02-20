@@ -10,8 +10,15 @@
     border: solid;
     flex-direction: column;
     padding: 10px;
-    .popup-option{
+    .popup-option-1{
+      margin-bottom: 0.6rem;
       cursor: pointer;
       width: 100%;
+      gap: 2rem;
+    }
+    .popup-option-2{
+      cursor: pointer;
+      width: 100%;
+      gap: 2rem;
     }
 }

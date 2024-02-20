@@ -1,7 +1,8 @@
 import { toast } from "react-toastify";
 import { firestore } from "../firebaseConfig";
-import { addDoc, collection, onSnapshot } from "firebase/firestore";
+import { addDoc, collection, onSnapshot, doc, updateDoc } from "firebase/firestore";
 import { FirebaseError } from "firebase/app";
+import { Exception } from "sass";
  
 const dbRef = collection(firestore, "posts");
 let userRef = collection(firestore, "users");
@@ -47,4 +48,7 @@ export const getCurrentUser = (setCurrentuser) => {
             })[0] 
         );
     });
+};
+
+export const editProfle = () => {
 };

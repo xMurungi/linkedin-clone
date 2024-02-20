@@ -55,3 +55,28 @@ img:hover{
     top: 52px;
     z-index: 99;
 }
+.username-topbar{
+    margin-left: 100px;
+  .top-p{
+    font-size: 18px;
+    font-weight: 600;
+    color: transparent; /* Remove default text color */
+    background: linear-gradient(
+    74deg,
+    /* Use the provided RGB values directly */
+    rgb(66, 133, 244) 0%,
+    rgb(155, 114, 203) 9%,
+    rgb(217, 101, 112) 20%,
+    rgb(217, 101, 112) 24%,
+    rgb(155, 114, 203) 35%,
+    rgb(66, 133, 244) 44%,
+    rgb(155, 114, 203) 50%,
+    rgb(217, 101, 112) 56%,
+    /* Add a neutral color for the end */
+    #279739 75%,
+    #279739 100%
+  );
+  -webkit-background-clip: text; /* For older WebKit browsers */
+  background-clip: text;
+  }
+}

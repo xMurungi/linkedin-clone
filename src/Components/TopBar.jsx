@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { getCurrentUser } from "../API/FireStoreAPI";
 import "../Sass/TopBar.scss";
+
 import LinkedinLogo from "../assets/LinkedinLogo.png";
 import anime from "../assets/anime-search.svg";
 import Briefcase from "../assets/briefcase-icon.svg";
@@ -19,6 +21,11 @@ const TopBar = ()=> {
     };
 
     const nav = useNavigate();
+
+    const [CurrentUser, setCurrentuser] = useState("");
+    useMemo(() => {
+        getCurrentUser(setCurrentuser);
+    },[]);
 
     return(
         <div className="topbar" >
@@ -43,6 +50,7 @@ const TopBar = ()=> {
                 <img src={news} alt="" onClick={() => nav("/")} />
                 <img src={profile} alt="Profile switch" onClick={displayPopup} />
             </div>
+            <div className="username-topbar"> <p className="top-p" >Hello, {CurrentUser.name}</p></div>
             
         </div>
     );
